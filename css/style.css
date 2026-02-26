@@ -1,0 +1,711 @@
+/* БАЗА СТИЛІВ САЙТУ / BASE STYLES OF THE SITE */
+/* 1. Вбудовування шрифтів / Font Embedding */
+/* roboto-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/roboto-v50-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/roboto-v50-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* play-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Play';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/play-v21-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* play-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Play';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/play-v21-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* 2. Розмір елемента з урахуванням внутрішніх та зовнішніх відступів / Element size including padding and margin */
+* {
+  box-sizing: border-box;
+}
+/* 3. Для посилань стиль тексту — звичайний / For links, the text style is normal */
+address {
+  font-style: normal;
+}
+/* 4. Дозволяє посиланню мати width і height, як у блочного елемента, але залишатися в рядку / Allows a link to have width and height like a block element while remaining inline */
+a {
+  display: inline-block;
+}
+/* 5. / Додаємо до кожної секції верхній та нижній відступ / We add top and bottom spacing to each section / */
+.section-all-padding {
+  padding: 48px 0px;
+}
+/* 6. Прибираємо верхній відступ (margin-top) у заголовків та параграфів / Remove top margin (margin-top) from headings and paragraphs */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0px;
+}
+/* 7. Базова структура (розмітка) для кожної секції / Basic structure (markup) for each section */
+.container {
+  width: 100%;
+  max-width: 1288px;
+  padding: 0px 24px;
+  margin: 0 auto;
+}
+/* 8. Головні стилі сайту, які успадковуються / Main site styles that are inherited */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0px;
+  background-color: var(--Primary-colors-white);
+  background-image: url('/css/bacground-img-section3.png');
+  background-repeat: no-repeat;
+  background-position: center 1560px;
+}
+/* 9. Прибираємо маркери з елементів списків / Remove list markers from list items */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/* 10. Основна палітра кольорів сайту / Main color palette of the site */
+:root {
+  --Primary-colors-white: #ffffff;
+  --Primary-colors-blue: #2b7fff;
+  --Primary-colors-navy-blue: #011c44;
+  --Secondary-colors-grey: #4a4a4a;
+  --Secondary-colors-grey-light: #4a4a4a;
+  --Secondary-colors-yellow: #ffd02b;
+}
+
+/*HEADER*/
+/* 1. Встановлюємо верхній і нижній padding для блоку header / Set top and bottom padding for the header block */
+.header {
+  padding: 32px 0px;
+}
+/* 2. Стилі логотипу / Logo styles */
+.logo-link {
+  font-family: 'Play', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--Primary-colors-blue);
+  text-decoration: none;
+  text-transform: capitalize;
+  width: 74px;
+}
+/* 3. Стилі посилань / Link styles */
+.link {
+  line-height: 1.16;
+  color: var(--Primary-colors-navy-blue);
+  text-decoration: none;
+}
+.link:hover {
+  color: var(--Primary-colors-blue);
+}
+/* 4. Основні характеристики для спрайтів посилань з іконками / Main properties for link sprites with icons */
+.header-icons-sprite {
+  width: 32px;
+  height: 32px;
+  fill: var(--Primary-colors-navy-blue);
+}
+/*Flex-box - Header*/
+/* 1. Проміжок між двома видами посилань  + центрування / Gap between two types of links, centering */
+.nav-plus-adress-header-for-flex-shrink {
+  display: flex;
+  gap: 240px;
+  align-items: center;
+}
+/* 2. Встановлюємо display для блоку header для подальшого використання flex-shrink, щоб текст залишався на місці / Set display for the header block to use flex-shrink later so the text stays in place */
+.header-logo-nav-adress {
+  display: flex;
+  background-color: rgb(255, 255, 255, 0.25);
+}
+/* 3. Навігація: посилання, розташування в рядок, проміжки (gap) / Navigation: links, inline layout, spacing (gap) */
+.header-nav {
+  display: flex;
+  gap: 56px;
+}
+/* 4. Підключення display: flex для всього контейнера, правильне розташування та відстань між назвою компанії (логотипом) та посиланнями + flex-shrink, щоб текст не з’їжджав / Apply display: flex to the entire container, proper layout and spacing between company name (logo) and links + flex-shrink to prevent text from collapsing */
+.header-logo-nav {
+  display: flex;
+  gap: 240px;
+  flex-shrink: 0;
+}
+/* 5. Основні display-характеристики для посилань (links) №2 з зображенням / Main display properties for links #2 with image */
+.header-adress {
+  display: flex;
+  gap: 32px;
+}
+
+/* ПЕРША ОСНОВНА СТОРІНКА — MAIN TITLE / FIRST MAIN PAGE — MAIN TITLE */
+/* 1. Стилі параграфа — косметологічна клініка / Paragraph styles — cosmetology clinic */
+.subtitle {
+  line-height: 1.16;
+  color: var(--Primary-colors-navy-blue);
+  margin-bottom: 0;
+}
+/* 2. Стилі для назви сайту / Styles for site name  */
+.website-name {
+  font-family: 'Play', sans-serif;
+  font-size: 140px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: var(--Primary-colors-blue);
+  line-height: 1;
+}
+/* 3. Стилі для кнопки / Button styles */
+.button {
+  font-size: 16px;
+  font-family: inherit;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--Primary-colors-white);
+  line-height: 1.16;
+  background-color: var(--Primary-colors-blue);
+  border-radius: 32px;
+  border: none;
+  padding: 16px 32px;
+  width: 219px;
+}
+.button:hover {
+  background-color: var(--Secondary-colors-grey-light);
+}
+/* 4. Стилі для тексту під кнопкою / Text styles under the button  */
+.bottom-header {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--Secondary-colors-grey);
+  text-align: center;
+}
+/* 5. Додавання фонового зображення до секції / Adding a background image to the section */
+.section-all-padding.section1 {
+  background-image: url('/css/bacground-img-main.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 0px;
+}
+/* FLEXBOX-SECTION №1 */
+/* 1. Контейнер з назвою, параграфом та кнопкою: підключення flex до контейнера, переміщення у потрібну позицію, додавання певної ширини та правильне розташування / Container with title, paragraph, and button: apply flex to the container, move to the desired position, set specific width, and proper layout */
+.section1-everything {
+  display: flex;
+  width: 529px;
+  flex-direction: column;
+  padding-bottom: 156px;
+  margin-left: 100px;
+}
+/* 2. Через display: правильне розташування між описом "Косметологічна клініка" та назвою сайту "Beauty Zone" / Use display to properly position the description "Cosmetology Clinic" and site name "Beauty Zone" */
+.section1-subtitle-name {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: flex-start;
+}
+/* 3. Через display: правильне розташування між кнопкою та текстом опису під кнопкою / Using display: proper placement between the button and the description text under the button */
+.section1-button-bottom-header {
+  display: flex;
+  flex-direction: column;
+  width: 238px;
+  height: 103px;
+  gap: 14px;
+}
+
+/* ДРУГА СТОРІНКА / SECOND PAGE */
+/* 1. Стилі назви другої сторінки / Styles for the second page title */
+.section-title2 {
+  font-family: 'Play', sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.16;
+  color: var(--Primary-colors-navy-blue);
+  margin-bottom: 0;
+}
+.section-title2 span {
+  text-transform: capitalize;
+  color: var(--Primary-colors-blue);
+}
+/* 2. Стиль для параграфів та опису другої сторінки / Paragraph and description styles for the second page */
+.paragraph1-section-2 {
+  font-size: 22px;
+  line-height: 1.75;
+  color: var(--Primary-colors-navy-blue);
+  width: 709px;
+  height: 76px;
+  margin-bottom: 0;
+}
+.paragraph2-section-2 {
+  font-size: 22px;
+  line-height: 2;
+  color: var(--Primary-colors-navy-blue);
+}
+.paragraph2-section-2 span {
+  font-weight: 600;
+}
+/* 3. Стилі для фото з прикладами профілактик косметологічної клініки / Styles for photos with examples of cosmetology clinic treatments */
+.section2-img1 {
+  border-radius: 50%;
+}
+.section2-img2 {
+  border-radius: 50%;
+  margin-left: 176px;
+}
+/* 4.Відступи за допомогою padding зверху та знизу на сторінці два / Spacing using padding-top and padding-bottom on the second page */
+.section-all-padding.section2 {
+  padding-top: 88px;
+  padding-bottom: 88px;
+}
+/* FLEXBOX-SECTION №2 */
+/* 1. Правильне розташування через display між блоком з текстом та фото з прикладами косметологічних профілактик / Proper placement using display between a text block and a photo with examples of cosmetology treatments */
+.section2-container {
+  display: flex;
+  gap: 32px;
+}
+/* 2. Правильне розташування через display тексту опису другої сторінки / Proper placement using display for the description text of the second page */
+.section2-text-all {
+  display: flex;
+  width: 709px;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
+}
+/* 3. Правильне розташування через display фото прикладів профілактик косметологічної клініки / Proper placement using display for photos of cosmetology clinic treatment examples */
+.section2-img-all {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+/* ТРЕТЯ СТОРІНКА / THIRD PAGE */
+/* 1. Стилі для назви третьої сторінки / Styles for the third page title*/
+.section-title3 {
+  font-family: 'Play', sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--Primary-colors-navy-blue);
+  margin-bottom: 0;
+}
+.section-title3 span {
+  color: var(--Primary-colors-blue);
+  display: block;
+}
+/* 2. Стилі для параграфів на сторінці три / Paragraph styles on the third page*/
+.section3-paragraphs {
+  color: #000000;
+  text-align: center;
+}
+/* 3. Певний відступ ліворуч та праворуч через padding для всього контейнера на сторінці три; підключення display, щоб надалі нащадки не «їздили» по сайту, а були зафіксовані / Specific left and right padding for the entire container on the third page; apply display so that child elements remain fixed in place and don’t shift around the site */
+.section3-container-padding {
+  padding-left: 90px;
+  padding-right: 90px;
+  display: flex;
+}
+
+/* FLEXBOX-SECTION №3 */
+/* 1. Правильне розміщення елементів на сторінці три / Proper placement of elements on the third page */
+.section3-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 48px;
+}
+/* 2. Правильне розташування та відступи між артиклями на сторінці три / Proper placement and spacing between articles on the third page */
+.section3-article {
+  display: flex;
+  gap: 56px;
+}
+.section3-article-border {
+  border: 1px solid gray;
+  border-radius: 32px;
+  background-color: var(--Primary-colors-white);
+}
+.section3-article2 {
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 316px;
+  height: 181px;
+}
+/* 3. Правильне розташування в артиклах між стикерами та текстом опису на сторінці три / Proper placement in articles between stickers and description text on the third page */
+.section3-container-article-discription {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* СТОРІНКА ЧОТИРИ / FOURTH PAGE */
+/* 1. Стиль назви сторінки чотири + через display центрування тексту / Style for the fourth page title + text centering using display */
+.section-title-4 {
+  font-family: 'Play', sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.15;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.section-title-4 span {
+  color: var(--Primary-colors-blue);
+}
+/* 2. Стилі для параграфів, опис процедур на сторінці чотири / Paragraph styles for procedure descriptions on the fourth page */
+.procedurs-section4 {
+  font-size: 22px;
+  text-align: center;
+  color: var(--Primary-colors-white);
+  margin-bottom: 0;
+  width: 152px;
+}
+/* 3. Приховуємо заголовки артиклів за допомогою visibility / Hide article titles using display or visibility */
+.name-for-article {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+/* 4. Стиль стрілочок / Arrow styles */
+.style-strelka-section4 {
+  width: 44px;
+  height: 44px;
+  flex-grow: 1;
+}
+.style-strelka-section4:hover {
+  stroke: var(--Primary-colors-navy-blue);
+}
+/* FLEXBOX-SECTION №4 */
+/* 1. Правильне розташування між артиклями / Proper placement between articles */
+.section4-procedurs {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+/* 2. Стилі та розташування тексту в картках / Text styles and layout in cards */
+.masksforface {
+  width: 344px;
+  height: 456px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 120px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 120px;
+  overflow: hidden;
+  background-image:
+    linear-gradient(
+      180.05deg,
+      rgba(1, 28, 68, 0) 48.53%,
+      rgba(1, 28, 68, 0.725825) 84.61%,
+      #011c44 101.39%
+    ),
+    url('1procedurs.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 32px 77px;
+}
+.masksforface2 {
+  width: 344px;
+  height: 456px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 120px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 120px;
+  overflow: hidden;
+  background-image:
+    linear-gradient(
+      180.05deg,
+      rgba(1, 28, 68, 0) 48.53%,
+      rgba(1, 28, 68, 0.725825) 84.61%,
+      #011c44 101.39%
+    ),
+    url('2procedurs.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 32px 77px;
+}
+.masksforface3 {
+  width: 344px;
+  height: 456px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 120px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 120px;
+  overflow: hidden;
+  background-image:
+    linear-gradient(
+      180.05deg,
+      rgba(1, 28, 68, 0) 48.53%,
+      rgba(1, 28, 68, 0.725825) 84.61%,
+      #011c44 101.39%
+    ),
+    url('3procedurs.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 32px 77px;
+}
+/* 3. Розташування через display карток та назви сторінки / Layout using display for cards and page title */
+.section4-container-all {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+/* 4. Правильне додаткове розташування зі стрілками / Proper additional placement with arrows */
+.container-section4-plus-icons {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+/* 5. Додаємо ще один контейнер, вставляємо весь контент сторінки та робимо display, щоб контент не «їздив» і був фіксованим / Add another container, insert all page content, and use display so the content doesn’t shift and remains fixed*/
+.for-proper-scaling-of-section4 {
+  display: flex;
+  justify-content: center;
+}
+
+/* СТОРІНКА П’ЯТА / FIFTH PAGE */
+/* 1. Стилі назви сторінки п’ять / Styles for the fifth page title */
+.contacts-title-section5 {
+  font-family: 'Play', sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.17;
+  color: var(--Primary-colors-navy-blue);
+}
+.contacts-title-section5 span {
+  color: var(--Primary-colors-blue);
+}
+/* 2. Стилі тексту параграфа в описі форми для реєстрації / Paragraph text styles in the registration form description */
+.title-form-section5 {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1;
+  color: var(--Primary-colors-white);
+  width: 274px;
+  height: 52px;
+  margin: 0;
+}
+.title-form-section5 span {
+  line-height: 2.36;
+  color: var(--Primary-colors-blue);
+}
+/* 3. Privacy-Policy-Section5 */
+.privacy-policy-section5 {
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.5;
+  color: var(--Secondary-colors-grey-light);
+  margin: 0;
+}
+/* 4. Стилі тексту посилання на політику конфіденційності / Text styles for the privacy policy link */
+.privacy-policy-section5 span {
+  font-size: 12px;
+  text-align: center;
+  line-height: 3;
+  color: var(--Secondary-colors-grey-light);
+  font-style: Solid;
+  text-decoration: underline;
+}
+/* 5. Стилі для Google карти / Styles for Google Map */
+.cards-section5 {
+  border: 1px solid transparent;
+  border-radius: 32px;
+  width: 605px;
+  height: 481px;
+}
+/* 6. Ширина та висота для кнопки на сторінці п’ять / Width and height for the button on the fifth page */
+.button.section5 {
+  width: 281px;
+  height: 53px;
+}
+/* FLEXBOX-SECTION №5 */
+/* 1. Правильне розташування між картою та формою реєстрації / Proper placement between the map and the registration form */
+.section5-container {
+  display: flex;
+  gap: 32px;
+}
+/* 2. Стилі форми + display для розміщення тексту всередині форми / Form styles + display for positioning text inside the form */
+.section5-form {
+  width: 422px;
+  height: 482px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--Primary-colors-navy-blue);
+  border: 4px solid var(--Primary-colors-navy-blue);
+  border-radius: 32px;
+  padding: 48px 57px 48px 56px;
+}
+/* 3. Розміщення всього контенту через display на сторінці п’ять / Layout of all content using display on the fifth page */
+.section5-container-all {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+/* 4. Розташування через display між текстом та політикою конфіденційності / Layout using display between text and privacy policy */
+.section5-after-register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 8px;
+}
+/* 5. Розміщення через display тексту форми між кнопкою / Layout using display for form text between the button */
+.section5-form-container {
+  width: 310px;
+  height: 385px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  align-self: center;
+}
+/* 6. Центрування тексту форми через display / Centering form text using display */
+.section5-form-main-text {
+  display: flex;
+  justify-content: center;
+}
+/* 7. Виключно padding для секції п’ять: зверху 48px, знизу 96px / Only padding for the fifth section: top 48px, bottom 96px */
+.last-section {
+  padding-bottom: 96px;
+  padding-top: 48px;
+}
+/* 8. Додаємо ще один контейнер, вставляємо весь контент сторінки та робимо display, щоб контент не «їздив» і був фіксованим / Add another container, insert all page content, and use display so the content doesn’t shift and remains fixed*/
+.for-proper-scaling-of-section5 {
+  display: flex;
+  justify-content: center;
+}
+
+/* FOOTER */
+/* 1. Стилі для посилань / Link styles*/
+.link-footer {
+  font-size: 16px;
+  color: var(--Primary-colors-white);
+  text-decoration: none;
+}
+.link-footer:hover {
+  color: var(--Primary-colors-blue);
+}
+/* 2. Стилі для посилань №2 / Styles for links #2 */
+.link2-footer {
+  font-size: 16px;
+  font-style: normal;
+  color: var(--Primary-colors-white);
+  line-height: 1.18;
+  text-decoration: none;
+}
+/* 3. Стилі для параграфа політики конфіденційності / Paragraph styles for the privacy policy */
+.privacy-policy-footer {
+  font-size: 16px;
+  line-height: 1.18;
+  color: var(--Primary-colors-white);
+  margin-bottom: 0;
+}
+/* 4. Стилі для параграфа з авторськими правами / Paragraph styles for copyright notice */
+.copyright-footer {
+  font-size: 13px;
+  line-height: 1.15;
+  color: var(--Secondary-colors-grey-light);
+}
+/* 5. Додавання фонового фото + верхній відступ за допомогою padding / Adding a background image + top spacing using padding */
+.footer {
+  background-color: var(--Primary-colors-navy-blue);
+  background-image: url('footer-background.png');
+  padding: 56px 0px;
+}
+/* 6. Стилі логотипу в футері / Footer logo styles */
+.logo-link.footer {
+  width: 82px;
+  height: 42px;
+  padding-top: 0;
+}
+/* 7. Стилі спрайт-іконок у футері / Footer icon sprite styles */
+.footer-icons-sprite {
+  width: 32px;
+  height: 42px;
+  fill: var(--Primary-colors-white);
+}
+/* FLEXBOX-FOOTER */
+/* 1. Правильне розміщення між блоками лінків / Proper placement between link blocks */
+.footer-container {
+  display: flex;
+  gap: 150px;
+}
+/* 2. Display-розміщення між елементами в блоці з посиланнями №1 / Display layout between elements in the links block #1 */
+.footer-links-nav {
+  width: 203px;
+  height: 124px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+/* 3. Display-розміщення між посиланнями №2 та №3 / Display layout between links #2 and #3 */
+.footer-adress {
+  width: 192px;
+  height: 166px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+/* 4. Display-розміщення між елементами в блоці з посиланнями №3 / Display layout between elements in the links block #3 */
+.footer-adress-logos {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+/* 5. Display-розміщення між елементами в блоці з посиланнями №2 / Display layout between elements in the links block #2 */
+.footer-adress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+/* 6. Display-розміщення між даними про захист та політикою конфіденційності / Display layout between data protection info and privacy policy */
+.footer-last-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 203px;
+  height: 50px;
+}
+/* 7. Display-розміщення між посиланнями №2, №3 та політикою конфіденційності / Display layout between links #2, #3 and the privacy policy */
+.footer-adress-container {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  gap: 186px;
+}
+/* 8. Display-розміщення між посиланням №1 та логотипом / Display layout between link #1 and the logo */
+.footer-navigation {
+  display: flex;
+  flex-direction: row;
+  gap: 150px;
+}
